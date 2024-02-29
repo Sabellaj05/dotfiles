@@ -40,7 +40,7 @@ import subprocess
 
 @hook.subscribe.startup
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    home = os.path.expanduser('~/scripts/autostart.sh')
     subprocess.Popen([home])     ## No es lo mas comun pero asi funca bien
 
 @lazy.function
