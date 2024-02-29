@@ -3,7 +3,7 @@
 alias lsx='exa -la --icons -h'
 alias ls='exa -l --icons -h --group-directories-first'
 alias lxs='exa --icons'
-alias lxd='exa --icons --group-directories-first'
+alias lxd='exa -a --icons --group-directories-first'
 
 ## cd's
 alias ..='cd ..'
