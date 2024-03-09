@@ -176,6 +176,10 @@ screens = [
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
+                widget.Image(
+                    filename='~/.config/qtile/Assets/launch_icon.png',
+                    scale="False"
+                    ),
                 #widget.Prompt(),         #mod+r el old rofi
                 widget.WindowName(),
                 widget.Chord(

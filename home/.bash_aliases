@@ -20,6 +20,11 @@ alias xcp='xclip -sel c'
 ## Git
 alias gst='git status'
 alias glo='git log --oneline'
+
+## Neovim
+alias vim='nvim'
+
+
 ## C Drive
 alias c-docs='cd /media/don/9EEE3C3BEE3C0DD1/Users/manum/Documents'
 
