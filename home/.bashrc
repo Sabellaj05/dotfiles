@@ -106,15 +106,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 
-# >>> bash completion >>>
-
-source /etc/profile.d/bash_completion.sh
-
-
-
-# >>> bash completion >>>
-
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -177,7 +168,7 @@ conda deactivate
 
 eval "$(starship init bash)"
 
-ROCML_HOME=/opt/rocm-6.0.2
+#ROCML_HOME=/opt/rocm-6.0.2
 HIP_PLATFORM=amd
 
 . "$HOME/.cargo/env"
