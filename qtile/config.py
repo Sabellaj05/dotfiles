@@ -178,7 +178,8 @@ screens = [
                 widget.GroupBox(),
                 widget.Image(
                     filename='~/.config/qtile/Assets/launch_icon.png',
-                    scale="False"
+                    scale="False",
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(terminal)},
                     ),
                 #widget.Prompt(),         #mod+r el old rofi
                 widget.WindowName(),
