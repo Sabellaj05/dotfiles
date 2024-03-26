@@ -4,15 +4,15 @@ import = ["/home/don/.config/alacritty/catppuccin-mocha.toml"]
 size = 10.5
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"                       ## Adeed `Nerd Font` at the end of every family
+family = "JetBrainsMono"                       ## Adeed `Nerd Font` at the end of every family
 style = "Regular"
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMono"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMono"
 style = "Italic"
 
 [[keyboard.bindings]]
