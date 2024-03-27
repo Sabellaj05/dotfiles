@@ -5,7 +5,7 @@ configuration {
   font: "JetBrains Mono Medium 10";
   modi: "window,run,drun,ssh";
   show-icons: true;
-  icon-theme: "Papirus";   /* papirus-icon-theme | dependency std repo */
+  icon-theme: "Papirus";   /* papirus-icon-theme | dependency apt repo */
 }
 
 
