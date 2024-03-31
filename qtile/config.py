@@ -24,6 +24,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+
+# from qtile_extras.widget.decorations import PowerLineDecoration    # check this one out
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -63,46 +65,49 @@ keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "h",                  lazy.layout.left(), desc="Move focus to left"),
+    Key([mod], "l",                  lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], "j",                  lazy.layout.down(), desc="Move focus down"),
+    Key([mod], "k",                  lazy.layout.up(), desc="Move focus up"),
+    Key([mod], "space",              lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-    # Grow windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "shift"], "h",         lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], "l",         lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], "j",         lazy.layout.shuffle_down(), desc="Move window down"),
+    Key([mod, "shift"], "k",         lazy.layout.shuffle_up(), desc="Move window up"),
+    # Grow windows. If current       window is on the edge of screen and direction
+    # will be to screen edge -       window would shrink.
+    Key([mod, "control"], "h",       lazy.layout.grow_left(), desc="Grow window to the left"),
+    Key([mod, "control"], "l",       lazy.layout.grow_right(), desc="Grow window to the right"),
+    Key([mod, "control"], "j",       lazy.layout.grow_down(), desc="Grow window down"),
+    Key([mod, "control"], "k",       lazy.layout.grow_up(), desc="Grow window up"),
+    Key([mod], "n",                  lazy.layout.normalize(), desc="Reset all window sizes"),
     # Minimize all windows
     Key([mod], "m", minimize_all(), desc="Toggle minimization on all window"),
     #Rofi launchero
-    Key([mod, "shift"], "r", lazy.spawn("rofi -show drun")),
-
+    Key([mod, "shift"], "r",         lazy.spawn("rofi -show drun")),
     # Flameshot
-    Key([], "Print", lazy.spawn("flameshot gui --clipboard --path /home/don/Pictures/Screenshots")),
+    Key([], "Print",                 lazy.spawn("flameshot gui --clipboard --path /home/don/Pictures/Screenshots")),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod, "shift"], "Return",    lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
+    Key([mod], "Return",             lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
-    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "Tab",                lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "w",                  lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "f",                  lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
+    Key([mod], "t",                  lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+    Key([mod, "control"], "r",       lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "control"], "q",       lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod], "r",                  lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    # Volume `Dont have audio settings yet`
+    Key([], "XF86AudioRaiseVolume",  lazy.spawn("amixer -q set Master 2%+")),
+    Key([], "XF86AudioLowerVolume",  lazy.spawn("amixer -q set Master 2%-")),
+    Key([], "XF86AudioMute",         lazy.spawn("amixer -q -D pulse set Master toggle")),
 ]
 
 groups = [
@@ -129,41 +134,36 @@ for i in groups:
         ]
     )
 
+## >>>>>> Mocha colors >>>>>> ##
 
+ROSEWATER = "#f5e0dc"  #f5e0dc
+FLAMINGO = "#f2cdcd"
+PINK = "#f5c2e7"
+MAUVE = "#cba6f7"
+RED = "#f38ba8"
+MAROON = "#eba0ac"
+PEACH = "#fab387"
+YELLOW = "#f9e2af"
+GREEN = "#a6e3a1"
+TEAL = "#94e2d5"
+SKY = "#89dceb"
+SAPPHIRE = "#74c7ec"
+BLUE = "#89b4fa"
+LAVENDER = "#b4befe"
+TEXT = "#cdd6f4"
+SUBTEXT1 = "#bac2de"
+SUBTEXT0 = "#a6adc8"
+OVERLAY2 = "#9399b2"
+OVERLAY1 = "#7f849c"
+OVERLAY0 = "#6c7086"
+SURFACE2 = "#585b70"
+SURFACE1 = "#45475a"
+SURFACE0 = "#313244"
+BASE = "#1e1e2e"
+MANTLE = "#181825"
+CRUST = "#11111b"
 
-
-#>>>>> old group >>>>>>#
-#group_label = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-
-#groups = [Group(i) for i in "123456789"]
-#groups = [Group(i) for i in group_label]
-
-
-#for i in groups:
-#    keys.extend(
-#        [
-#            # mod1 + letter of group = switch to group
-#            Key(
-#                [mod],
-#                i.name,
-#                lazy.group[i.name].toscreen(),
-#                desc="Switch to group {}".format(i.name),
-#            ),
-#            # mod1 + shift + letter of group = switch to & move focused window to group
-#            Key(
-#                [mod, "shift"],
-#                i.name,
-#                lazy.window.togroup(i.name, switch_group=True),
-#                desc="Switch to & move focused window to group {}".format(i.name),
-#            ),
-#            # Or, use below if you prefer not to switch to that group.
-#            # # mod1 + shift + letter of group = move focused window to group
-#            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-#            #     desc="move focused window to group {}".format(i.name)),
-#        ]
-#    )
-
-#>>>>> old groups >>>>>>#
+## >>>>>> Mocha colors >>>>>> ##
 
 #>>>>>experiment>>>>#
 # Extend groups ( Exiperiment )
@@ -179,20 +179,20 @@ for i in groups:
 layouts = [
    # main
     layout.Columns(
-        border_focus_stack=["#74c7ec", "#fab387"],
-        border_focus=["#74c7ec"],
+        border_focus_stack=[BLUE, PEACH],
+        border_focus=[MAUVE],
         border_width= 3
         ),
 
-    layout.MonadTall(border_focus_stack=["#74c7ec", "#fab387"],
-        border_focus=["#74c7ec"],
+    layout.MonadTall(border_focus_stack=[BLUE, PEACH],
+        border_focus=[PEACH],
         border_width= 3),
 
     #layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-     layout.Bsp(border_focus_stack=["#74c7ec", "#fab387"],
-        border_focus=["#74c7ec"],
+     layout.Bsp(border_focus_stack=[BLUE, PEACH],
+        border_focus=[BLUE],
         border_width= 3),
     # layout.Matrix(),
      
@@ -234,8 +234,8 @@ screens = [
                 ),
                 # Pomodoro parameters: 
                 # https://docs.qtile.org/en/latest/manual/ref/widgets.html#pomodoro
-                widget.Pomodoro(color_active="#a6e3a1",
-                                color_inactive="#f38ba8",
+                widget.Pomodoro(color_active=GREEN,
+                                color_inactive=RED,
                                 length_long_break=15,
                                 length_pomodori=25,
                                 length_short_break=5,
@@ -245,12 +245,13 @@ screens = [
                                 prefix_paused="Pause",
                                 font='JetBrains Mono',
                                 ), ## twekear 
+                #widget.Volume(fmt="v {}"),
 
                 #widget.TextBox("default config", name="default"),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 #widget.StatusNotifier(),
-                widget.Systray(),
+                #widget.Systray(),
                 #widget.CPUGraph(),
                 widget.CPU(),
                #wigget.Sep(padding=4, linewdith=5),
