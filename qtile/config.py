@@ -83,7 +83,7 @@ keys = [
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # Minimize all windows
     Key([mod], "m", minimize_all(), desc="Toggle minimization on all window"),
-    #Rofi launcher
+    #Rofi launchero
     Key([mod, "shift"], "r", lazy.spawn("rofi -show drun")),
 
     # Flameshot
@@ -105,9 +105,11 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "123456789"]
+group_label = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-#group_label: list[str] = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+#groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in group_label]
+
 
 for i in groups:
     keys.extend(
@@ -132,6 +134,16 @@ for i in groups:
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
+
+# Extend groups ( Experiment )
+
+#groups.extend([
+#    Group('ff', spawn='firefox', layout='max', persist=False,
+#          matches=[Match(wm_class=['Firefox'])]),
+#    Group('btop', spawn='btop', layout='max', persist=False),
+#    ])
+
+
 
 layouts = [
    # main
