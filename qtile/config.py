@@ -105,44 +105,75 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-group_label = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-
-#groups = [Group(i) for i in "123456789"]
-groups = [Group(i) for i in group_label]
-
+groups = [
+    Group("1", label="一", layout="columns"),
+    Group("2", label="ニ", layout="max"),
+    Group("3", label="三", layout="columns"),
+    Group("4", label="四", layout="columns"),
+    Group("5", label="五", layout="max"),
+    Group("6", label="六", layout="columns"),
+    Group("7", label="七", layout="columns"),
+    Group("8", label="八", layout="columns"),
+    Group("9", label="九", layout="columns"),
+    Group("0", label="零", layout="columns"),
+]
 
 for i in groups:
     keys.extend(
         [
-            # mod1 + letter of group = switch to group
-            Key(
-                [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
-            ),
-            # mod1 + shift + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
-            ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
+            Key([mod], i.name, lazy.group[i.name].toscreen()),
+            Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True)),
+            Key([mod, "control"], i.name, lazy.window.togroup(i.name)),
+            Key([mod], "comma", lazy.screen.prev_group()),
+            Key([mod], "period", lazy.screen.next_group()),
         ]
     )
 
-# Extend groups ( Experiment )
+
+
+
+#>>>>> old group >>>>>>#
+#group_label = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+#groups = [Group(i) for i in "123456789"]
+#groups = [Group(i) for i in group_label]
+
+
+#for i in groups:
+#    keys.extend(
+#        [
+#            # mod1 + letter of group = switch to group
+#            Key(
+#                [mod],
+#                i.name,
+#                lazy.group[i.name].toscreen(),
+#                desc="Switch to group {}".format(i.name),
+#            ),
+#            # mod1 + shift + letter of group = switch to & move focused window to group
+#            Key(
+#                [mod, "shift"],
+#                i.name,
+#                lazy.window.togroup(i.name, switch_group=True),
+#                desc="Switch to & move focused window to group {}".format(i.name),
+#            ),
+#            # Or, use below if you prefer not to switch to that group.
+#            # # mod1 + shift + letter of group = move focused window to group
+#            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+#            #     desc="move focused window to group {}".format(i.name)),
+#        ]
+#    )
+
+#>>>>> old groups >>>>>>#
+
+#>>>>>experiment>>>>#
+# Extend groups ( Exiperiment )
 
 #groups.extend([
 #    Group('ff', spawn='firefox', layout='max', persist=False,
 #          matches=[Match(wm_class=['Firefox'])]),
 #    Group('btop', spawn='btop', layout='max', persist=False),
 #    ])
-
+#>>>>experiment>>>>>#
 
 
 layouts = [
