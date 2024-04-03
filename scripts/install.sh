@@ -2,6 +2,8 @@
 
 # WIP, not tested yet also stolen
 
+# Test
+
 copy(){
   cp -rp "$1" "$2"
   echo "Copied $1 to $2"
