@@ -31,7 +31,8 @@ alias vim='nvim'
 alias jpn='jupyter notebook --no-browser'
 alias jpl='jupyter lab --no-browser'
 
-
+## Cursor from the command line
+alias cursor='/opt/cursor.appimage'
 
 #>>>> OS >>>>
 ## Windows C Drive
