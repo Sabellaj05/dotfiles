@@ -14,5 +14,5 @@
 
 ## To do
 
-- Set LSP server on Neovim
+- Set LSP on Neovim
 - Customize Dunst
