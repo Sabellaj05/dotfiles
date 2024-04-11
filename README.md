@@ -4,6 +4,7 @@
 - Window Manager: [**Qtile**](https://qtile.org/)
 - Compositor: [**Picom**](https://github.com/yshui/picom)
 - Terminal: [**Alacritty**](https://alacritty.org/)
+- Browser: [**Floorp**](https://floorp.app/en/)
 - Menu: [**Rofi**](https://github.com/davatorium/rofi)
 - Docs: [**Zathura**](https://github.com/pwmt/zathura)
 - Notifications: [**Dunst**](https://github.com/dunst-project/dunst)
