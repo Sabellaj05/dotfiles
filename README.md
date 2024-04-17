@@ -13,6 +13,8 @@
 
 ---
 
+![Image](https://github.com/Sabellaj05/dotfiles/assets/desktop-00.png)
+
 ## To do
 
 - Set LSP on Neovim
