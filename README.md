@@ -13,7 +13,7 @@
 
 ---
 
-![Image](https://github.com/Sabellaj05/dotfiles/assets/desktop-00.png)
+![Image](assets/desktop-00.png)
 
 ## To do
 
