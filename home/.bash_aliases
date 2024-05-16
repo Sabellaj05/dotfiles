@@ -6,6 +6,9 @@ alias ls='exa -l --icons -h --group-directories-first'
 alias lxs='exa --icons'
 alias lxd='exa -a --icons --group-directories-first'
 
+# list upgradable
+alias nlu='nala list --upgradable'
+
 ## clipboard thingy
 alias xcp='xclip -sel c'
 
