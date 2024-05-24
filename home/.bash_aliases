@@ -1,8 +1,8 @@
 #>>>>> Terminal >>>>>
 
 ## ls stuff
-alias lsx='exa -la --icons -h'
-alias ls='exa -l --icons -h --group-directories-first'
+#alias lsx='exa -la --icons -h'
+alias ls='exa -la --icons -h --group-directories-first'
 alias lxs='exa --icons'
 alias lxd='exa -a --icons --group-directories-first'
 
