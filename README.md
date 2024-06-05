@@ -8,7 +8,7 @@
 - Menu: [**Rofi**](https://github.com/davatorium/rofi)
 - Docs: [**Zathura**](https://github.com/pwmt/zathura)
 - Notifications: [**Dunst**](https://github.com/dunst-project/dunst)
-- File manager:[**Yazi**](https://yazi-rs.github.io/),  [**Thunar**](https://github.com/rgmf/xfce4-thunar) 
+- File manager: [**Yazi**](https://yazi-rs.github.io/),  [**Thunar**](https://github.com/rgmf/xfce4-thunar) 
 - Text editor: [**Neovim**](https://neovim.io/), [**VSCode**](https://code.visualstudio.com/)
 
 ---
