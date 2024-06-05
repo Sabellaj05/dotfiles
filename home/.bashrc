@@ -121,6 +121,19 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# >>> Yazi file manager >>>
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# >>> Yazi file manager >>>
+
 # >>> Obsidian >>>
 # Functions to open specfic vaults in obsidian
 # 2 so far
