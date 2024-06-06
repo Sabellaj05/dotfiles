@@ -7,6 +7,9 @@ $git_state\
 $git_status\
 $cmd_duration\
 $line_break\
+$lua\
+$c\
+$conda\
 $python\
 $character"""
 
@@ -41,8 +44,36 @@ style = "bright-black"
 format = "[$duration]($style) "
 style = "yellow"
 
+[azure]
+disabled = false
+format = "on [$symbol($username)]($style) "
+symbol = "󰠅 "
+style = "blue bold"
+
 [python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
+format = "[$symbol$version$virtualenv]($style) "
+#style = "bright-black"
+style = "green bold"
+symbol = ' '
+python_binary = "python3"
 
+[conda]
+format = '[$symbol$environment]($style) '
+style = "dimmed green"
 
+[c]
+format = 'via [$symbol$name $version]($style)'
+symbol = " "
+style = "grey bold"
+
+[lua]
+format = 'via [$symbol($version)]($style) '
+style = "purple bold"
+symbol = " "
+#version_format = 'v${raw}'
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[docker_context]
+format = 'via [🐋$context](blue bold)'
