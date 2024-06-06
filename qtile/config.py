@@ -207,7 +207,7 @@ layouts = [
 # pegarle una ojeada a esto tal vez sea clave para el tema de los iconos
 widget_defaults = dict(
     #font="sans",
-    font="JetBrains Mono",
+    font="JetBrainsMono",
     fontsize=12,
     padding=3,
 )
