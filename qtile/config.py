@@ -104,7 +104,7 @@ keys = [
     Key([mod, "control"], "r",       lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q",       lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r",                  lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    # Volume `Dont have audio settings yet`
+    # Volume `Dont have audio settings yet` and doesn't work
     Key([], "XF86AudioRaiseVolume",  lazy.spawn("amixer -q set Master 2%+")),
     Key([], "XF86AudioLowerVolume",  lazy.spawn("amixer -q set Master 2%-")),
     Key([], "XF86AudioMute",         lazy.spawn("amixer -q -D pulse set Master toggle")),

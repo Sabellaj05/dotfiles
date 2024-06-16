@@ -11,6 +11,8 @@ $lua\
 $c\
 $conda\
 $python\
+$azure\
+$docker_context\
 $character"""
 
 [directory]
@@ -46,7 +48,9 @@ style = "yellow"
 
 [azure]
 disabled = false
-format = "on [$symbol($username)]($style) "
+format = "on [$symbol($subscription)]($style) "
+#format = "on [$symbol($subscription)]($style) "
+#format = "on [$symbol($username)]($style) "
 symbol = "󰠅 "
 style = "blue bold"
 
