@@ -178,8 +178,19 @@ unset __conda_setup
 conda deactivate
 # <<< conda initialize <<<
 
+# <<< starship <<<
 
 eval "$(starship init bash)"
+# <<< starship <<<
+
+
+# <<< pyenv <<<
+export PYENV_ROOT="$HOME/.pyenv"
+
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init -)"
+# <<< pyenv <<<
 
 #ROCML_HOME=/opt/rocm-6.0.2
 HIP_PLATFORM=amd
