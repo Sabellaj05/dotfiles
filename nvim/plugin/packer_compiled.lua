@@ -102,7 +102,7 @@ _G.packer_plugins = {
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/don/.local/share/nvim/site/pack/packer/start/plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
+    url = "https://github.com/nvim-lua-/plenary.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
