@@ -31,6 +31,18 @@ return require('packer').startup(function(use)
     tag = '0.1.8',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+-- Tab completion etc
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/vim-vsnip',
+      'hrsh7th/cmp-vsnip',
+    }
+  }
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
