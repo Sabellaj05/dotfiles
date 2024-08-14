@@ -1,0 +1,15 @@
+Summary:
+
+    Navigation:
+        Tab: Go to the next item.
+        Shift + Tab: Go to the previous item.
+
+    Documentation Scrolling:
+        Control + b: Scroll up through documentation.
+        Control + f: Scroll down through documentation.
+
+    Completion Control:
+        Control + Space: Manually trigger the completion menu.
+        Control + e: Abort the completion.
+        Enter: Confirm the selection and insert it into the code.
+
