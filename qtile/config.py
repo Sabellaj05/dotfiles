@@ -29,10 +29,12 @@
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+# from libqtile.utils import guess_terminal
 from libqtile import hook
 import os
 import subprocess
+# from libqtile import cmd_spawn
+
 
 # esto sirve para aplicar la funcion al hacer un qtile restart
 #@hook.subscribe.startup
@@ -222,7 +224,7 @@ screens = [
                 widget.Image(
                     filename='~/.config/qtile/Assets/launch_icon.png',
                     scale="False",
-                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(terminal)},
+                    mouse_callbacks={'Button1': lambda: cmd_spawn(terminal)},
                     ),
                 #widget.Prompt(),         #mod+r el old rofi
                 widget.WindowName(),
