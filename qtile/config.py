@@ -219,13 +219,13 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Image(
+                    filename='~/.config/qtile/Assets/launch_Icon.png',
+                    scale="False",
+                    mouse_callbacks={'Button1': lambda: lazy.spawncmd(terminal)},
+                    ),
                 widget.CurrentLayout(),
                 widget.GroupBox(),
-                widget.Image(
-                    filename='~/.config/qtile/Assets/launch_icon.png',
-                    scale="False",
-                    mouse_callbacks={'Button1': lambda: cmd_spawn(terminal)},
-                    ),
                 #widget.Prompt(),         #mod+r el old rofi
                 widget.WindowName(),
                 widget.Chord(
