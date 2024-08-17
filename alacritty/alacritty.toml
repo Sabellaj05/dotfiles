@@ -44,3 +44,13 @@ instance = "Alacritty"
 [window.padding]
 x = 10
 y = 10
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }   # Set cursor shape to "Beam" and enable blinking
+
+vi_mode_style = { shape = "Block", blinking = "Always" }  # Set a different style for vi mode if desired
+
+blink_interval = 650      # Set the cursor blinking interval to 750 milliseconds
+blink_timeout = 10         # Set the time after which the cursor stops blinking to 5 seconds
+unfocused_hollow = true   # Render the cursor as a hollow box when the window is unfocused
+thickness = 0.15          # Set the thickness of the cursor relative to the cell width
