@@ -18,5 +18,6 @@
 ## To do
 
 - [x] Set LSP on Neovim
-- [ ]  Customize Dunst
-- [x]  Yazi config
+- [x] Yazi config
+- [ ] Set Debugger on Neovim
+- [ ] Customize Dunst
