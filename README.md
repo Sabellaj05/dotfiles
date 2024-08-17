@@ -13,7 +13,7 @@
 
 ---
 
-![Image](assets/desktop-00.png)
+![Image](assets/desktop-01.png)
 
 ## To do
 

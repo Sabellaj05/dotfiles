@@ -8,7 +8,7 @@ local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {
@@ -22,12 +22,13 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
+    { name = 'vsnip' }, 
   }, {
     { name = 'buffer' },
   })
 })
 
+--
 -- Setup LSP servers with capabilities.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
