@@ -1,7 +1,9 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls', 'bashls', 'clangd', 'pyright'}
+  ensure_installed = { 'lua_ls', 'bashls', 'clangd', 'pyright', 'yamlls', }
+
 })
+
 
 local cmp = require'cmp'
 
@@ -56,6 +58,11 @@ require("lspconfig").clangd.setup {
   on_attach = on_attach
 }
 require("lspconfig").pyright.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+require("lspconfig").yamlls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
