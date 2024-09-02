@@ -240,7 +240,8 @@ screens = [
                 widget.WindowName(foreground=COLORS["TEXT"], max_chars=25),
                 widget.Chord(
                     chords_colors={
-                        "launch": ("#74c7ec", "#89dceb"),
+                        "launch": (COLORS["SAPPHIRE"],
+                                   COLORS["SKY"]),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
