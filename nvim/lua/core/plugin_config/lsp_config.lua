@@ -1,6 +1,13 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls', 'bashls', 'clangd', 'pyright', 'yamlls', 'dockerls', }
+  ensure_installed = { 'lua_ls',
+  'bashls',
+  'clangd',
+  'pyright',
+  'yamlls',
+  'dockerls',
+  'rust_analyzer',
+}
 
 })
 
@@ -68,6 +75,11 @@ require("lspconfig").yamlls.setup {
 }
 
 require("lspconfig").dockerls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+require("lspconfig").rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
