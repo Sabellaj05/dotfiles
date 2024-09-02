@@ -136,38 +136,40 @@ for i in groups:
         ]
     )
 
-## >>>>>> Mocha colors >>>>>> ##
+############################# >>>>>> Mocha colors >>>>>> #############################
 
-ROSEWATER = "#f5e0dc"  #f5e0dc
-FLAMINGO = "#f2cdcd"
-PINK = "#f5c2e7"
-MAUVE = "#cba6f7"
-RED = "#f38ba8"
-MAROON = "#eba0ac"
-PEACH = "#fab387"
-YELLOW = "#f9e2af"
-GREEN = "#a6e3a1"
-TEAL = "#94e2d5"
-SKY = "#89dceb"
-SAPPHIRE = "#74c7ec"
-BLUE = "#89b4fa"
-LAVENDER = "#b4befe"
-TEXT = "#cdd6f4"
-SUBTEXT1 = "#bac2de"
-SUBTEXT0 = "#a6adc8"
-OVERLAY2 = "#9399b2"
-OVERLAY1 = "#7f849c"
-OVERLAY0 = "#6c7086"
-SURFACE2 = "#585b70"
-SURFACE1 = "#45475a"
-SURFACE0 = "#313244"
-BASE = "#1e1e2e"
-MANTLE = "#181825"
-CRUST = "#11111b"
+COLORS = {
+    "ROSEWATER":  "#f5e0dc",  
+    "FLAMINGO":   "#f2cdcd",
+    "PINK":       "#f5c2e7",
+    "MAUVE":      "#cba6f7",
+    "RED":        "#f38ba8",
+    "MAROON":     "#eba0ac",
+    "PEACH":      "#fab387",
+    "YELLOW":     "#f9e2af",
+    "GREEN":      "#a6e3a1",
+    "TEAL":       "#94e2d5",
+    "SKY":        "#89dceb",
+    "SAPPHIRE":   "#74c7ec",
+    "BLUE":       "#89b4fa",
+    "LAVENDER":   "#b4befe",
+    "TEXT":       "#cdd6f4",
+    "SUBTEXT1":   "#bac2de",
+    "SUBTEXT0":   "#a6adc8",
+    "OVERLAY2":   "#9399b2",
+    "OVERLAY1":   "#7f849c",
+    "OVERLAY0":   "#6c7086",
+    "SURFACE2":   "#585b70",
+    "SURFACE1":   "#45475a",
+    "SURFACE0":   "#313244",
+    "BASE":       "#1e1e2e",
+    "MANTLE":     "#181825",
+    "CRUST":      "#11111b",
+    }
 
-## >>>>>> Mocha colors >>>>>> ##
+############################ >>>>>> Mocha colors >>>>>> ###########################
 
-#>>>>>experiment>>>>#
+############################>>>>>experiment>>>>############################
 # Extend groups ( Exiperiment )
 
 #groups.extend([
@@ -175,26 +177,26 @@ CRUST = "#11111b"
 #          matches=[Match(wm_class=['Firefox'])]),
 #    Group('btop', spawn='btop', layout='max', persist=False),
 #    ])
-#>>>>experiment>>>>>#
+############################>>>>experiment>>>>>#
 
 
 layouts = [
    # main
     layout.Columns(
-        border_focus_stack=[BLUE, PEACH],
-        border_focus=[MAUVE],
+        border_focus_stack=[COLORS["BLUE"], COLORS["PEACH"]],
+        border_focus=[COLORS["MAUVE"]],
         border_width= 3
         ),
 
-    layout.MonadTall(border_focus_stack=[BLUE, PEACH],
-        border_focus=[PEACH],
+    layout.MonadTall(border_focus_stack=[COLORS["BLUE"], COLORS["PEACH"]],
+        border_focus=[COLORS["PEACH"]],
         border_width= 3),
 
     #layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-     layout.Bsp(border_focus_stack=[BLUE, PEACH],
-        border_focus=[BLUE],
+     layout.Bsp(border_focus_stack=[COLORS["BLUE"], COLORS["PEACH"]],
+        border_focus=[COLORS["BLUE"]],
         border_width= 3),
     # layout.Matrix(),
      
@@ -205,6 +207,9 @@ layouts = [
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
+
+
+########################### >> Widgets >> ###########################
 
 # pegarle una ojeada a esto tal vez sea clave para el tema de los iconos
 widget_defaults = dict(
@@ -224,10 +229,15 @@ screens = [
                     scale="False",
                     mouse_callbacks={'Button1': lambda: lazy.spawncmd(terminal)},
                     ),
-                widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.GroupBox(
+                    active=COLORS["BLUE"],
+                    block_highlight_text_color=COLORS["MAUVE"],
+                    #highlight_method='line',
+                    #highlight_color=LAVENDER,
+                    ),
+                widget.CurrentLayout(foreground=COLORS["MAUVE"]),
                 #widget.Prompt(),         #mod+r el old rofi
-                widget.WindowName(),
+                widget.WindowName(foreground=COLORS["TEXT"], max_chars=25),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#74c7ec", "#89dceb"),
@@ -236,8 +246,8 @@ screens = [
                 ),
                 # Pomodoro parameters: 
                 # https://docs.qtile.org/en/latest/manual/ref/widgets.html#pomodoro
-                widget.Pomodoro(color_active=GREEN,
-                                color_inactive=RED,
+                widget.Pomodoro(color_active=COLORS["GREEN"],
+                                color_inactive=COLORS["RED"],
                                 length_long_break=15,
                                 length_pomodori=25,
                                 length_short_break=5,
@@ -255,14 +265,19 @@ screens = [
                 #widget.StatusNotifier(),
                 #widget.Systray(),
                 #widget.CPUGraph(),
-                widget.CPU(),
+                widget.CPU(foreground=COLORS["TEXT"]),
                #wigget.Sep(padding=4, linewdith=5),
-                widget.Memory(fmt="RAM{}", measure_mem="M"),
+                widget.Memory(foreground=COLORS["TEXT"],
+                              fmt="RAM{}",
+                              measure_mem="M"),
                #widget.Sep(),
                 #widget.Net(format="{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}", interface="enp3s0"),
-                widget.NetGraph(type='line', line_width=1),
+                widget.NetGraph(foreground=COLORS["TEXT"],
+                                type='line',
+                                line_width=1),
                 #widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
-                widget.Clock(format="%d-%m-%Y %I:%M"),
+                widget.Clock(foreground=COLORS["TEXT"],
+                             format="%d-%m-%Y %I:%M"),
                # widget.QuickExit(), para apagar
             ],
             #24,
@@ -281,6 +296,10 @@ screens = [
         # x11_drag_polling_rate = 60,
     ),
 ]
+
+########################### >> Widgets >> ###########################
+
+
 
 # Drag floating layouts.
 mouse = [
