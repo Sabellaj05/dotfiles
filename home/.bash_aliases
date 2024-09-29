@@ -52,3 +52,7 @@ alias win-d='cd /media/don/Discardo/'
 alias linuxv='lsb_release -a'
 alias linuxinfo='uname -m && cat /etc/*release'
 alias linuxkernel='uname -srmv'
+
+# Spawn terminall
+# `Alacritty New Terminal`
+alias ant='alacritty --working-directory $(pwd) &'
