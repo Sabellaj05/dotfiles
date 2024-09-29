@@ -85,6 +85,7 @@ keys = [
     Key([mod, "control"], "j",       lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k",       lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n",                  lazy.layout.normalize(), desc="Reset all window sizes"),
+    # minimze all windows
     Key([mod], "m", minimize_all(), desc="Toggle minimization on all window"),
     #Rofi launchero
     Key([mod, "shift"], "r",         lazy.spawn("rofi -show drun")),

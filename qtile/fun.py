@@ -1,17 +1,9 @@
-
 @lazy.funcion
 def spawn_terminal_pwd(qtile):
     # current window
-    cur_window = qtile.current_window
-
-    if cur_window is None:
-        qtile.cmd_spawn(terminal)
-        return
     try:
-        # get pid 
-        win_pid = cur_window.window.get_pid()
         # get current working dir
-        cwd = os.readlink(f'/proc/{win_pid}/cwd')
+        cwd = os.getcwd()
         # spawn terminal in such dir
         qtile.cmd_spawn(f'{terminal} --working-directory {cwd}')
 
