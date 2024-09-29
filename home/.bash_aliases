@@ -15,9 +15,13 @@ alias xcp='xclip -sel c'
 ## cd's
 alias ..='cd ..'
 alias ...='cd ../..'
+alias unlu='cd ~/Documents/repos-github/UNLu'
 
 #>>>> Software >>>>
 
+## Qtile
+## Restart config when broken
+alias qtile-reload='qtile cmd-obj -o cmd -f reload_config'
 ## zathura remove terminal
 alias ztr='nohup zathura'
 ## fulL HACKER
