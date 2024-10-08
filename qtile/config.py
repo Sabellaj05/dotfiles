@@ -185,7 +185,10 @@ layouts = [
     layout.Columns(
         border_focus_stack=[COLORS["BLUE"], COLORS["PEACH"]],
         border_focus=[COLORS["MAUVE"]],
-        border_width= 3
+        border_normal=[COLORS["OVERLAY0"]],
+        border_width=4,
+        margin=(8, 4, 2, 4),    # top right bottom left
+
         ),
 
     layout.MonadTall(border_focus_stack=[COLORS["BLUE"], COLORS["PEACH"]],
@@ -235,9 +238,9 @@ screens = [
                     #highlight_method='line',
                     #highlight_color=LAVENDER,
                     ),
-                widget.CurrentLayout(foreground=COLORS["MAUVE"]),
+                widget.CurrentLayout(foreground=COLORS["MAUVE"], font='JetBrains Mono Bold'),
                 #widget.Prompt(),         #mod+r el old rofi
-                widget.WindowName(foreground=COLORS["TEXT"], max_chars=25),
+                widget.WindowName(foreground=COLORS["TEXT"], font='JetBrains Mono Bold',  max_chars=25),
                 widget.Chord(
                     chords_colors={
                         "launch": (COLORS["SAPPHIRE"],
@@ -256,7 +259,7 @@ screens = [
                                 prefix_inactive="Pomodoro",
                                 prefix_long_break="LB ",
                                 prefix_paused="Pause",
-                                font='JetBrains Mono',
+                                font='JetBrains Mono Bold',
                                 ), ## twekear 
                 #widget.Volume(fmt="v {}"),
 
@@ -266,29 +269,37 @@ screens = [
                 #widget.StatusNotifier(),
                 #widget.Systray(),
                 #widget.CPUGraph(),
-                widget.CPU(foreground=COLORS["TEXT"]),
+                widget.CPU(foreground=COLORS["TEXT"], font='JetBrains Mono Bold'),
                #wigget.Sep(padding=4, linewdith=5),
                 widget.Memory(foreground=COLORS["TEXT"],
                               fmt="RAM{}",
-                              measure_mem="M"),
+                              measure_mem="M",
+                              font='JetBrains Mono Bold'),
                #widget.Sep(),
                 #widget.Net(format="{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}", interface="enp3s0"),
                 widget.NetGraph(foreground=COLORS["TEXT"],
+                                font='JetBrains Mono Bold',
                                 type='line',
                                 line_width=1),
                 #widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
                 widget.Clock(foreground=COLORS["TEXT"],
+                             font='JetBrains Mono Bold',
                              format="%d-%m-%Y %I:%M"),
                # widget.QuickExit(), para apagar
             ],
             #24,
-            26,
+            #26,   # bar height in pixels
+            28,   # bar height in pixels
+
             #background=[ "#1e1e2e66","#585b7066"],
-            #background=["#585b7066" ,"#1e1e2e66"],  Nice
+            #background=["#585b7066" ,"#1e1e2e66"],  # Nice
             #background = "#31324466",
-            background ="#24273a",
+            #background ="#24273a",  # el que estaba usando
+            background =[COLORS["BASE"], "#24273a"],
             #color="#74c7ec",
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            margin=[8, 5, 0, 5],
+            #border_width=[8, 2, 0, 8],  # Draw top and bottom borders
+            #border_width=4
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
