@@ -250,7 +250,6 @@ screens = [
                 ),
                 # Pomodoro parameters: 
                 # https://docs.qtile.org/en/latest/manual/ref/widgets.html#pomodoro
-                widget.Systray(),
                 widget.Pomodoro(color_active=COLORS["GREEN"],
                                 color_inactive=COLORS["RED"],
                                 length_long_break=15,
@@ -268,6 +267,7 @@ screens = [
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 #widget.StatusNotifier(),
+                #widget.Systray(),
                 #widget.CPUGraph(),
                 widget.CPU(foreground=COLORS["LAVENDER"], font='JetBrains Mono Bold'),
                #wigget.Sep(padding=4, linewdith=5),
