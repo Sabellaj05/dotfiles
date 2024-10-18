@@ -22,8 +22,7 @@ alias unlu='cd ~/Documents/repos-github/UNLu'
 ## Qtile
 ## Restart config when broken
 alias qtile-reload='qtile cmd-obj -o cmd -f reload_config'
-## zathura remove terminal
-alias ztr='nohup zathura'
+
 ## fulL HACKER
 alias neo='cmatrix -C blue'
 
@@ -55,4 +54,4 @@ alias linuxkernel='uname -srmv'
 
 # Spawn terminall
 # `Alacritty New Terminal`
-alias ant='alacritty --working-directory $(pwd) &'
+alias ant='alacritty --working-directory $(pwd) >/dev/null 2>&1 &'

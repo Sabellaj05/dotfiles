@@ -161,6 +161,16 @@ alias ob-it='obsidian_open_it'
 alias ob-cloud='obsidian_open_cloud'
 # >>> Obsidian >>>
 
+# >>> Zathura >>>
+zathura_open() {
+  zathura "$1" >/dev/null 2>&1 &
+  disown    
+}
+
+alias ztr='zathura_open'
+
+# >>> Zathura >>>
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/don/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
