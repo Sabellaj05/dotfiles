@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/don/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/home/don/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/don/.local/share/nvim/site/pack/packer/start/vim-vsnip",

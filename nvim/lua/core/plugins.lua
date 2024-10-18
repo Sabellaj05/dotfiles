@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
+  use 'voldikss/vim-floaterm'
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',

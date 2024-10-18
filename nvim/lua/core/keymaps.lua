@@ -14,5 +14,9 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 -- vim.keymap.set('n', '<leader>th', ':hsplit terminal')
 -- vim.keymap.set('n', '<leader>tv', ':vsplit term://bash<CR>')
 
+-- floaterm
+vim.keymap.set('n', '<leader>ft', ':FloatermNew<CR>')
+
+
 
 
