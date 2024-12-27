@@ -15,7 +15,9 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 -- vim.keymap.set('n', '<leader>tv', ':vsplit term://bash<CR>')
 
 -- floaterm
+-- vim.keymap.set('n', '<leader>ft', ':FloatermNew<CR>')
 vim.keymap.set('n', '<leader>ft', ':FloatermNew<CR>')
+vim.keymap.set('n', '<leader>ftr', ':FloatermNew --position=right<CR>')
 
 
 
