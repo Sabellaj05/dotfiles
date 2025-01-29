@@ -1,4 +1,4 @@
-# dotfiles (not main pc anymore) -> [**current**]()
+# dotfiles (not main pc anymore) -> [**current**](https://github.com/Sabellaj05/dotfiles-current)
 
 - OS: [**Ubuntu 22.04.4 LTS**](https://releases.ubuntu.com/jammy/)
 - Window Manager: [**Qtile**](https://qtile.org/)
